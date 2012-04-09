@@ -1,0 +1,48 @@
+= acts_as_shareable
+
+acts_as_shareable is a gem to allow any model objects to be shared to other models, the 'sharing' is also associated to a user.
+Main uses would be for Users to share items with other Users.
+
+== Installation
+
+=== The master branch supports rails 3
+
+Add the gem to the gemfile:
+  gem "acts_as_shareable"
+
+Run the generator:
+  rails generate acts_as_shareable
+
+This will generate a migration file as well as a model called Share.
+
+== Usage
+
+=== Setup
+
+  * Make you ActiveRecord model shareable.
+    Make your model(s) that you want to allow to be shareable acts_as_shareable, just add:
+
+      class Book < ActiveRecord::Base
+        ...
+        acts_as_shareable
+        ...
+      end
+
+---
+
+=== acts_as_shareable methods
+
+ * Share a new book to a group
+ 
+     book = Book.new
+     group = Group.new
+     book.share_to(group,by_user)
+ 
+ * Can find shared objects by sharable_type, where they are shared, or the user that shared them
+ 
+     Book.find_by_shared_to(group)
+     Book.find_shares_by_user(user)
+
+== Copyright
+
+Copyright (c) 2012 ( massimiliano dot marzo at gmail dot com ), released under the MIT license.

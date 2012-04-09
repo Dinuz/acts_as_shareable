@@ -1,0 +1,5 @@
+Description:
+    rails generate acts_as_shareable
+
+    no need to specify a name after acts_as_shareable as you can not change the model name from Shareable
+    the acts_as_shareable_migration file will be created in db/migrate
