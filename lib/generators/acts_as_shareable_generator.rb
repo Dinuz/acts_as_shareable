@@ -1,7 +1,7 @@
 require 'rails/generators'
 require 'rails/generators/migration'
 
-class ActsAsShareableGenerator < Rails::Generator::Base
+class ActsAsShareableGenerator < Rails::Generators::Base
 
   include Rails::Generators::Migration
 
